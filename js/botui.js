@@ -131,7 +131,7 @@ function bot_ui_ini() {
                     botui.action.button({
                         delay: 1500,
                         action: [{
-                            text: "想要成为什么样的人？",
+                            text: "想要成为什么样的人 🤔？",
                             value: "why-domain"
                         }]
                     }).then(function (a) {
@@ -147,7 +147,7 @@ function bot_ui_ini() {
             }).then(function () {
                 botui.message.add({
                     delay: 1600,
-                    content: "那么，仔细看看我的博客吧？ ^_^"
+                    content: "请为我加油吧~ ^_^"
                 })
             })
         } 
