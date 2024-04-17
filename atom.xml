@@ -35,4 +35,25 @@
     
   </entry>
   
+  <entry>
+    <title>Hexo-Theme-Sakura</title>
+    <link href="http://example.com/2018/12/12/Hexo-Theme-Sakura/"/>
+    <id>http://example.com/2018/12/12/Hexo-Theme-Sakura/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2024-04-15T06:04:24.205Z</updated>
+    
+    
+    <summary type="html">hexo-sakura主题使用教程</summary>
+    
+    
+    
+    <category term="技术" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="web" scheme="http://example.com/tags/web/"/>
+    
+    <category term="悦读" scheme="http://example.com/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
 </feed>
