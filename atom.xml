@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Kato_Megumi的个人博客</title>
+  <title>Kato_Megumi&#39;s blog</title>
   <icon>https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png</icon>
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-21T05:33:55.089Z</updated>
+  <updated>2024-05-04T13:39:02.885Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二次元图集</title>
+    <link href="http://example.com/2024/05/04/%E5%9B%BE%E9%9B%86/"/>
+    <id>http://example.com/2024/05/04/%E5%9B%BE%E9%9B%86/</id>
+    <published>2024-05-04T12:55:20.000Z</published>
+    <updated>2024-05-04T13:39:02.885Z</updated>
+    
+    
+    <summary type="html">图集</summary>
+    
+    
+    
+    
+    <category term="图集" scheme="http://example.com/tags/%E5%9B%BE%E9%9B%86/"/>
+    
+  </entry>
   
   <entry>
     <title>【洛谷】P5707 【深基2.例12】上学迟到题解</title>
