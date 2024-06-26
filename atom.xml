@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-26T14:26:18.793Z</updated>
+  <updated>2024-06-26T14:39:27.527Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2024/06/26/jQuery/"/>
     <id>http://example.com/2024/06/26/jQuery/</id>
     <published>2024-06-26T12:03:15.000Z</published>
-    <updated>2024-06-26T14:26:18.793Z</updated>
+    <updated>2024-06-26T14:39:27.527Z</updated>
     
     
     <summary type="html">jQuery知识点总结</summary>
