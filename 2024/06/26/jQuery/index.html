@@ -477,11 +477,11 @@ $("#one + div").css("background", "#bbffaa");
 <pre class="line-numbers language-html"><code class="language-html">//4.选择 id 为 two 的元素后面的所有 div 兄弟元素
 $("#two ~ div").css("background", "#bbffaa");
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="3-3过滤选择器"><a href="#3-3过滤选择器" class="headerlink" title="3.3过滤选择器"></a>3.3过滤选择器</h2><h3 id="3-3-1-基本过滤器"><a href="#3-3-1-基本过滤器" class="headerlink" title="3.3.1 基本过滤器"></a>3.3.1 基本过滤器</h3><p><strong>:first</strong> 获取第一个元素**(重点)**</p>
+<h2 id="3-3过滤选择器"><a href="#3-3过滤选择器" class="headerlink" title="3.3过滤选择器"></a>3.3过滤选择器</h2><h3 id="3-3-1-基本过滤器"><a href="#3-3-1-基本过滤器" class="headerlink" title="3.3.1 基本过滤器"></a>3.3.1 基本过滤器</h3><p><strong>:first</strong> 获取第一个元素<strong>(重点)</strong></p>
 <pre class="line-numbers language-html"><code class="language-html">//1.选择第一个 div 元素
 $("div:first").css("background", "#bbffaa");
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>:last</strong> 获取最后一个元素**(重点)**</p>
+<p><strong>:last</strong> 获取最后一个元素<strong>(重点)</strong></p>
 <pre class="line-numbers language-html"><code class="language-html">//2.选择最后一个 div 元素
 $("div:last").css("background", "#bbffaa");
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -497,7 +497,7 @@ $("div:even").css("background", "#bbffaa");
 <pre class="line-numbers language-html"><code class="language-html">//5.选择索引值为奇数的 div 元素
 $("div:odd").css("background", "#bbffaa");
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>:eq(index)</strong> 匹配一个给定索引值的元素**(重点)**</p>
+<p><strong>:eq(index)</strong> 匹配一个给定索引值的元素<strong>(重点)</strong></p>
 <pre class="line-numbers language-html"><code class="language-html">//6.选择索引值为等于 3 的 div 元素
 $("div:eq(3)").css("background", "#bbffaa");
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -535,11 +535,11 @@ $(&quot;div:parent&quot;).css(&quot;background&quot;, &quot;#bbffaa&quot;);
 <pre><code>//4.选择含有 class 为 mini 元素的 div 元素
 $(&quot;div:has(.mini)&quot;).css(&quot;background&quot;, &quot;#bbffaa&quot;);
 </code></pre>
-<h3 id="3-3-3-属性过滤器"><a href="#3-3-3-属性过滤器" class="headerlink" title="3.3.3 属性过滤器"></a>3.3.3 属性过滤器</h3><p><strong>[attribute]</strong> 匹配包含给定属性的元素**(重点)**</p>
+<h3 id="3-3-3-属性过滤器"><a href="#3-3-3-属性过滤器" class="headerlink" title="3.3.3 属性过滤器"></a>3.3.3 属性过滤器</h3><p><strong>[attribute]</strong> 匹配包含给定属性的元素<strong>(重点)</strong></p>
 <pre><code>//1.选取含有 属性title 的div元素
 $(&quot;div[title]&quot;).css(&quot;background&quot;, &quot;#bbffaa&quot;);
 </code></pre>
-<p><strong>[attribute&#x3D;value]</strong> 匹配给定的属性是某个特定值的元素**(重点)**</p>
+<p><strong>[attribute&#x3D;value]</strong> 匹配给定的属性是某个特定值的元素<strong>(重点)</strong></p>
 <pre><code>//2.选取 属性title值等于&#39;test&#39;的div元素
 $(&quot;div[title=&#39;test&#39;]&quot;).css(&quot;background&quot;, &quot;#bbffaa&quot;);
 </code></pre>
@@ -566,10 +566,10 @@ $(&quot;div[id][title*=&#39;es&#39;]&quot;).css(&quot;background&quot;, &quot;#b
 $(&quot;div[title][title!=&#39;test&#39;]&quot;).css(&quot;background&quot;, &quot;#bbffaa&quot;);
 </code></pre>
 <h2 id="3-3-4-表单过滤器"><a href="#3-3-4-表单过滤器" class="headerlink" title="3.3.4 表单过滤器"></a>3.3.4 表单过滤器</h2><p><strong>:input</strong> 匹配所有<strong>input,textarea,select</strong>和<strong>button</strong>元素</p>
-<p><strong>:text</strong> 匹配所有文本输入框**(重点)**</p>
-<p><strong>:password</strong> 匹配所有的密码输入框**(重点)**</p>
-<p><strong>:radio</strong> 匹配所有的单选框**(重点)**</p>
-<p><strong>:checkbox</strong> 匹配所有的复选框**(重点)**</p>
+<p><strong>:text</strong> 匹配所有文本输入框<strong>(重点)</strong></p>
+<p><strong>:password</strong> 匹配所有的密码输入框<strong>(重点)</strong></p>
+<p><strong>:radio</strong> 匹配所有的单选框<strong>(重点)</strong></p>
+<p><strong>:checkbox</strong> 匹配所有的复选框<strong>(重点)</strong></p>
 <p><strong>:submit</strong>匹配所有提交按钮</p>
 <p><strong>:image</strong> 匹配所有img标签</p>
 <p><strong>:reset</strong> 匹配所有重置按钮</p>
@@ -586,11 +586,11 @@ $(&quot;:text:enabled&quot;).val(&quot;test&quot;);
 <pre><code>//2.对表单内 不可用input 赋值操作
 $(&quot;:text:disabled&quot;).val(&quot;对不可用input进行操作&quot;);
 </code></pre>
-<p><strong>:checked</strong> 匹配所选中的单选，复选，和下拉列表中选中的option标签对象**(重点)**</p>
+<p><strong>:checked</strong> 匹配所选中的单选，复选，和下拉列表中选中的option标签对象<strong>(重点)</strong></p>
 <pre><code>//3.获取多选框选中的个数  使用size()方法获取选取到的元素集合的元素个数
 alert($(&quot;:checkbox:checked&quot;).length);
 </code></pre>
-<p><strong>:selected</strong>   匹配所有选中的option**(重点)**</p>
+<p><strong>:selected</strong>   匹配所有选中的option<strong>(重点)</strong></p>
 <pre><code>// 1.获取选中的option标签对象
         var $options = $(&quot;select option:selected&quot;);
         // 2.遍历，获取option标签中的文本内容
