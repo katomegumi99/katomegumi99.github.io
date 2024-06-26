@@ -570,7 +570,7 @@ $(&quot;div[title][title!=&#39;test&#39;]&quot;).css(&quot;background&quot;, &qu
 <p><strong>:password</strong> 匹配所有的密码输入框**(重点)**</p>
 <p><strong>:radio</strong> 匹配所有的单选框**(重点)**</p>
 <p><strong>:checkbox</strong> 匹配所有的复选框**(重点)**</p>
-<p>**:submit **匹配所有提交按钮</p>
+<p><strong>:submit</strong>匹配所有提交按钮</p>
 <p><strong>:image</strong> 匹配所有img标签</p>
 <p><strong>:reset</strong> 匹配所有重置按钮</p>
 <p><strong>:button</strong> 匹配所有inputtype&#x3D;button按钮</p>
@@ -609,7 +609,7 @@ alert($(&quot;:checkbox:checked&quot;).length);
 <p><strong>children(exp)</strong> 返回匹配给定选择器的子元素 			               功能跟 parent&gt;child 一样</p>
 <p><strong>find(exp)</strong> 返回匹配给定选择器的后代元素 				           功能跟 ancestordescendant 一样</p>
 <p><strong>next()</strong> 返回当前元素的下一个兄弟元素 						 功能跟 prev+next 功能一样</p>
-<p>**nextAll() ** 返回当前元素后面所有的兄弟元素 					功能跟 prev~siblings 功能一样</p>
+<p><strong>nextAll()</strong> 返回当前元素后面所有的兄弟元素 					功能跟 prev~siblings 功能一样</p>
 <p><strong>nextUntil()</strong> 返回当前元素到指定匹配的元素为止的后面元素 </p>
 <p><strong>parent()</strong> 返回父元素 </p>
 <p><strong>prev(exp)</strong> 返回当前元素的上一个兄弟元素 </p>
@@ -618,9 +618,9 @@ alert($(&quot;:checkbox:checked&quot;).length);
 <p><strong>siblings(exp)</strong> 返回所有兄弟元素 </p>
 <p><strong>add()</strong> 把add匹配的选择器的元素添加到当前jquery对象中</p>
 <h1 id="5-jQuery的属性操作"><a href="#5-jQuery的属性操作" class="headerlink" title="5. jQuery的属性操作"></a>5. jQuery的属性操作</h1><p><strong>html()</strong> 	它可以设置和获取起始标签和结束标签中的内容。 	跟dom属性innerHTML 一样。</p>
-<p>**text() **	它可以设置和获取起始标签和结束标签中的文本。 	 跟dom属性innerText一样。</p>
+<p><strong>text()</strong>	它可以设置和获取起始标签和结束标签中的文本。 	 跟dom属性innerText一样。</p>
 <p><strong>val()</strong>   	它可以设置和获取表单项的value属性值。 			val 方法同时设置多个表单项的选中状态： 跟dom属性value一样</p>
-<p>**attr() **	可以设置和获取属性的值，不推荐操作checked、readOnly、selected、disabled等等 attr方法还可以操作非标准的属性。比如自定义属性：abc,bbj </p>
+<p><strong>attr()</strong>	可以设置和获取属性的值，不推荐操作checked、readOnly、selected、disabled等等 attr方法还可以操作非标准的属性。比如自定义属性：abc,bbj </p>
 <p><strong>prop()</strong> 	可以设置和获取属性的值,只推荐操作checked、readOnly、selected、disabled等等</p>
 <h1 id="6-Dom的增删改"><a href="#6-Dom的增删改" class="headerlink" title="6. Dom的增删改"></a>6. Dom的增删改</h1><h3 id="6-1-内部插入"><a href="#6-1-内部插入" class="headerlink" title="6.1 内部插入"></a>6.1 内部插入</h3><p><strong>appendTo()</strong>	<strong>a.appendTo(b)</strong>	把a插入到b子元素末尾，成为最后一个子元素</p>
 <p><strong>prependTo()</strong> 	<strong>a.prependTo(b)</strong>	把a插到b所有子元素前面，成为第一个子元素</p>
@@ -636,15 +636,15 @@ alert($(&quot;:checkbox:checked&quot;).length);
 <p>2、原生js的页面加载完成之后 </p>
 <h4 id="他们执行的次数？"><a href="#他们执行的次数？" class="headerlink" title="他们执行的次数？"></a>他们执行的次数？</h4><p>1、原生js的页面加载完成之后，只会执行最后一次的赋值函数。 </p>
 <p>2、jQuery 的页面加载完成之后是全部把注册的function函数，依次顺序全部执行。</p>
-<h4 id="jQuery-中其他的事件处理方法："><a href="#jQuery-中其他的事件处理方法：" class="headerlink" title="jQuery 中其他的事件处理方法："></a>jQuery 中其他的事件处理方法：</h4><p>**click() **	它可以绑定单击事件，以及触发单击事件</p>
-<p>**mouseover() **	鼠标移入事件 </p>
+<h4 id="jQuery-中其他的事件处理方法："><a href="#jQuery-中其他的事件处理方法：" class="headerlink" title="jQuery 中其他的事件处理方法："></a>jQuery 中其他的事件处理方法：</h4><p><strong>click()</strong>	它可以绑定单击事件，以及触发单击事件</p>
+<p><strong>mouseover()</strong>	鼠标移入事件 </p>
 <p><strong>mouseout()</strong> 	鼠标移出事件</p>
 <p><strong>bind()</strong> 	可以给元素一次性绑定一个或多个事件。</p>
-<p>**one() **	使用上跟bind一样。但是one方法绑定的事件只会响应一次。</p>
+<p><strong>one()</strong>	使用上跟bind一样。但是one方法绑定的事件只会响应一次。</p>
 <p><strong>unbind()</strong> 	跟bind 方法相反的操作，解除事件的绑定 也是用来绑定事件。</p>
-<p>**live() **	它可以用来绑定选择器匹配的所有元素的事件。哪怕这个元素是后面动态创建出 来的也有效</p>
+<p><strong>live()</strong>	它可以用来绑定选择器匹配的所有元素的事件。哪怕这个元素是后面动态创建出 来的也有效</p>
 <h3 id="7-2-事件的冒泡"><a href="#7-2-事件的冒泡" class="headerlink" title="7.2 事件的冒泡"></a>7.2 事件的冒泡</h3><h4 id="什么是事件的冒泡？"><a href="#什么是事件的冒泡？" class="headerlink" title="什么是事件的冒泡？"></a>什么是事件的冒泡？</h4><p>事件的冒泡是指，父子元素同时监听同一个事件。当触发子元素的事件的时候，同一个事件也被传递到了父元素的事件里去 响应。</p>
-<h4 id="那么如何阻止事件冒泡呢？"><a href="#那么如何阻止事件冒泡呢？" class="headerlink" title="那么如何阻止事件冒泡呢？"></a>那么如何阻止事件冒泡呢？</h4><p>在子元素事件函数体内，returnfalse; 可以阻止事件的冒泡传递。</p>
+<h4 id="那么如何阻止事件冒泡呢？"><a href="#那么如何阻止事件冒泡呢？" class="headerlink" title="那么如何阻止事件冒泡呢？"></a>那么如何阻止事件冒泡呢？</h4><p>在子元素事件函数体内，return false; 可以阻止事件的冒泡传递。</p>
 <h4 id="原生JavaScript获取事件对象"><a href="#原生JavaScript获取事件对象" class="headerlink" title="原生JavaScript获取事件对象"></a>原生JavaScript获取事件对象</h4><pre><code>window.onload = function () &#123;
  document.getElementById(&quot;areaDiv&quot;).onclick = function (event) &#123;
      console.log(event);
