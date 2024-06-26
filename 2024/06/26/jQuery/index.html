@@ -573,16 +573,16 @@ $(&quot;div[title][title!=&#39;test&#39;]&quot;).css(&quot;background&quot;, &qu
 <p><strong>:submit</strong>匹配所有提交按钮</p>
 <p><strong>:image</strong> 匹配所有img标签</p>
 <p><strong>:reset</strong> 匹配所有重置按钮</p>
-<p><strong>:button</strong> 匹配所有inputtype&#x3D;button按钮</p>
-<p><strong>:file</strong> 匹配所有inputtype&#x3D;file 文件上传</p>
-<p><strong>:hidden</strong> 匹配所有不可见元素display:none 或 inputtype&#x3D;hidden</p>
+<p><strong>:button</strong> 匹配所有input type&#x3D;button&lt;button&gt;按钮</p>
+<p><strong>:file</strong> 匹配所有input type&#x3D;file 文件上传</p>
+<p><strong>:hidden</strong> 匹配所有不可见元素display:none 或 input type&#x3D;hidden</p>
 <h3 id="3-3-5-表单对象属性过滤器"><a href="#3-3-5-表单对象属性过滤器" class="headerlink" title="3.3.5 表单对象属性过滤器"></a>3.3.5 表单对象属性过滤器</h3><p><strong>:enabled</strong>  匹配所有可用元素</p>
 <pre><code>//1.对表单内 可用input 赋值操作
 // val()方法可以操作表单的value属性值
 // 可以设置和获取
 $(&quot;:text:enabled&quot;).val(&quot;test&quot;);
 </code></pre>
-<p>**:disabled **匹配所有不可用元素</p>
+<p><strong>:disabled</strong> 匹配所有不可用元素</p>
 <pre><code>//2.对表单内 不可用input 赋值操作
 $(&quot;:text:disabled&quot;).val(&quot;对不可用input进行操作&quot;);
 </code></pre>
