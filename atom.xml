@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-26T15:10:59.452Z</updated>
+  <updated>2024-05-04T13:39:02.885Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,25 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>jQuery</title>
-    <link href="http://example.com/2024/06/26/jQuery/"/>
-    <id>http://example.com/2024/06/26/jQuery/</id>
-    <published>2024-06-26T12:03:15.000Z</published>
-    <updated>2024-06-26T15:10:59.452Z</updated>
-    
-    
-    <summary type="html">jQuery知识点总结</summary>
-    
-    
-    
-    <category term="技术" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="web" scheme="http://example.com/tags/web/"/>
-    
-  </entry>
   
   <entry>
     <title>二次元图集</title>
