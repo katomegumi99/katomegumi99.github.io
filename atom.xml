@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-04T13:39:02.885Z</updated>
+  <updated>2024-10-23T08:54:39.540Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自定义SpringMVC中的类型转换器Converter与ConverterFactory</title>
+    <link href="http://example.com/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/"/>
+    <id>http://example.com/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/</id>
+    <published>2024-10-23T08:09:25.000Z</published>
+    <updated>2024-10-23T08:54:39.540Z</updated>
+    
+    
+    <summary type="html">自定义SpringMVC中的类型转换器Converter与ConverterFactory</summary>
+    
+    
+    
+    <category term="技术" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="web" scheme="http://example.com/tags/web/"/>
+    
+  </entry>
   
   <entry>
     <title>二次元图集</title>

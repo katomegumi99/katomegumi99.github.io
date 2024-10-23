@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 技术 | Kato_Megumi&#39;s blog</title>
+  <title itemprop="name">自定义SpringMVC中的类型转换器Converter与ConverterFactory | Kato_Megumi&#39;s blog</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/favicon.ico">
   
@@ -384,171 +384,188 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/coding.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      自定义SpringMVC中的类型转换器Converter与ConverterFactory</h1>
+      <p class="entry-census">
+        <span>
+          <a target="_blank" rel="noopener" href="https://katomegumi99.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/head_megumi.jpg">
+          </a>
+        </span>
+        <span>
+          <a target="_blank" rel="noopener" href="https://katomegumi99.github.io/">hojun</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2024-10-23<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">野生技术协会</h1>
-    <span class="cat-des">
-      <p>Geek – Only for Love</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-    自定义SpringMVC中的类型转换器Converter与ConverterFactory</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2024-10-23</div>
-    <p>
-    自定义SpringMVC中的类型转换器Converter与ConverterFactory</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-    【洛谷】P5707 【深基2.例12】上学迟到题解</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2024-4-17</div>
-    <p>
-    【洛谷】P5707 【深基2.例12】上学迟到题解</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="自定义Converter"><a href="#自定义Converter" class="headerlink" title="自定义Converter"></a>自定义Converter</h1><p>首先创建一个<code>converter</code>类并继承<code>converter</code>接口，并重写其中的converter方法。例如：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringToItemTypeConverter</span> <span class="token keyword">implements</span> <span class="token class-name">Converter</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> ItemType<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> ItemType <span class="token function">convert</span><span class="token punctuation">(</span>String code<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>ItemType value <span class="token operator">:</span> ItemType<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">"code非法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后创建<code>WebMvcConfiguration</code>类并继承<code>WebMvcConfigurer</code>接口，将创建的converter类注册到<code>SpringMVC</code>中。例如：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebMvcConfiguration</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
     
-  </div>
+        <span class="token annotation punctuation">@Autowired</span>
+        <span class="token keyword">private</span> StringToItemTypeConverter stringToItemTypeConverter<span class="token punctuation">;</span>
+    
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addFormatters</span><span class="token punctuation">(</span>FormatterRegistry registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            registry<span class="token punctuation">.</span><span class="token function">addConverter</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>stringToItemTypeConverter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="自定义ConverterFactory"><a href="#自定义ConverterFactory" class="headerlink" title="自定义ConverterFactory"></a>自定义ConverterFactory</h1><p>当我们有很多的类型都需要考虑类型转换问题时，我们可以尝试自定义一个<code>ConverterFactory</code>，这个接口可以将同一个转换逻辑应用到一个接口的所有实现类，它所转换的目标类型是我们<strong>所需要转换的目标类型的父类</strong>。</p>
+<p>首先创建一个<code>converterFactory</code>类并继承<code>converterFactory</code>接口，并重写其中的<code>converterFactory</code>方法。例如：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringToBaseEnumConverterFactory</span> <span class="token keyword">implements</span> <span class="token class-name">ConverterFactory</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> BaseEnum<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token operator">&lt;</span>T <span class="token keyword">extends</span> <span class="token class-name">BaseEnum</span><span class="token operator">></span> Converter<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> T<span class="token operator">></span> <span class="token function">getConverter</span><span class="token punctuation">(</span>Class<span class="token operator">&lt;</span>T<span class="token operator">></span> targetType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Converter</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> T<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> T <span class="token function">convert</span><span class="token punctuation">(</span>String source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span>T enumConstant <span class="token operator">:</span> targetType<span class="token punctuation">.</span><span class="token function">getEnumConstants</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>enumConstant<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">return</span> enumConstant<span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">"非法的枚举值:"</span> <span class="token operator">+</span> source<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后创建<code>WebMvcConfiguration</code>类并继承<code>WebMvcConfigurer</code>接口，将创建的<code>converterFactory</code>类注册到<code>SpringMVC</code>中。例如：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebMvcConfiguration</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
+    
+        <span class="token annotation punctuation">@Autowired</span>
+        <span class="token keyword">private</span> StringToBaseEnumConverterFactory stringToBaseEnumConverterFactory<span class="token punctuation">;</span>
+    
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addFormatters</span><span class="token punctuation">(</span>FormatterRegistry registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            registry<span class="token punctuation">.</span><span class="token function">addConverterFactory</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>stringToBaseEnumConverterFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/QR/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/QR/WeChatPayQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2024/05/04/%E5%9B%BE%E9%9B%86/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/武见妙01.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/武见妙01.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                二次元图集</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a target="_blank" rel="noopener" href="https://katomegumi99.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/head_megumi.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a target="_blank" href="https://katomegumi99.github.io/" itemprop="url" rel="author noopener">hojun</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>永远相信美好的事情即将发生</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-    自定义SpringMVC中的类型转换器Converter与ConverterFactory</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2024-10-23</div>
-    <p>
-    自定义SpringMVC中的类型转换器Converter与ConverterFactory</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2024/10/23/%E8%87%AA%E5%AE%9A%E4%B9%89SpringMVC%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8Converter%E4%B8%8EConverterFactory/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-    【洛谷】P5707 【深基2.例12】上学迟到题解</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2024-4-17</div>
-    <p>
-    【洛谷】P5707 【深基2.例12】上学迟到题解</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2024/04/17/%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P5707-%E3%80%90%E6%B7%B1%E5%9F%BA2-%E4%BE%8B12%E3%80%91%E4%B8%8A%E5%AD%A6%E8%BF%9F%E5%88%B0%E9%A2%98%E8%A7%A3/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
