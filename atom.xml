@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-10-28T11:29:21.690Z</updated>
+  <updated>2024-11-22T11:44:27.146Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringCloud-Gateway中自定义filter过滤器</title>
+    <link href="http://example.com/2024/11/22/SpringCloud-Gateway%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89filter%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    <id>http://example.com/2024/11/22/SpringCloud-Gateway%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89filter%E8%BF%87%E6%BB%A4%E5%99%A8/</id>
+    <published>2024-11-22T11:09:19.000Z</published>
+    <updated>2024-11-22T11:44:27.146Z</updated>
+    
+    
+    <summary type="html">SpringCloud-Gateway中自定义filter过滤器</summary>
+    
+    
+    
+    <category term="技术" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SpringCloud" scheme="http://example.com/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud-Gateway中自定义Predicate断言</title>
+    <link href="http://example.com/2024/11/22/SpringCloud-Gateway%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89Predicate%E6%96%AD%E8%A8%80/"/>
+    <id>http://example.com/2024/11/22/SpringCloud-Gateway%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89Predicate%E6%96%AD%E8%A8%80/</id>
+    <published>2024-11-22T10:51:07.000Z</published>
+    <updated>2024-11-22T11:44:21.585Z</updated>
+    
+    
+    <summary type="html">自定义xxxRoutePredicateFactory规则</summary>
+    
+    
+    
+    <category term="技术" scheme="http://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SpringCloud" scheme="http://example.com/tags/SpringCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义SpringMVC中的类型转换器Converter与ConverterFactory</title>
