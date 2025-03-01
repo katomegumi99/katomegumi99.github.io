@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Kato_Megumi&#39;s blog</title>
+  <title>laoshifu&#39;s blog</title>
   <icon>https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/bg/五等份的新娘02.png</icon>
   
   <link href="http://example.com/atom.xml" rel="self"/>
@@ -70,23 +70,6 @@
     
     
     <category term="web" scheme="http://example.com/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二次元图集</title>
-    <link href="http://example.com/2024/05/04/%E5%9B%BE%E9%9B%86/"/>
-    <id>http://example.com/2024/05/04/%E5%9B%BE%E9%9B%86/</id>
-    <published>2024-05-04T12:55:20.000Z</published>
-    <updated>2024-05-04T13:39:02.885Z</updated>
-    
-    
-    <summary type="html">图集</summary>
-    
-    
-    
-    
-    <category term="图集" scheme="http://example.com/tags/%E5%9B%BE%E9%9B%86/"/>
     
   </entry>
   
