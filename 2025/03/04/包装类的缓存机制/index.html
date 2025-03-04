@@ -302,8 +302,9 @@
 <p>如果超出对应范围，仍然会去创建新的对象，缓存的范围区间的大小只是在性能和资源之间的权衡。</p>
 <p><strong>注意</strong>：两种浮点数类型的包装类<code>Float</code>，<code>Double</code>并<strong>没有</strong>实现缓存机制。</p>
 <p><strong>谨记</strong>：所有<strong>整型包装类</strong>对象之间值的比较，全部要使用<strong>equals</strong>方法。</p>
-<pre class="line-numbers language-text"><code class="language-text">【强制】所有整型包装类对象之间值的比较，全部使用equals方法比较。说明：对于Integer var=?在-128至127之间的赋值，Integer对象是在IntegerCache.cache产生，会复用已有对象，这个区间内的Integer值可以直接使用==进行判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断。——————阿里巴巴Java开发手册
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>【强制】所有整型包装类对象之间值的比较，全部使用equals方法比较。说明：对于Integer var&#x3D;?在-128至127之间的赋值，Integer对象是在IntegerCache.cache产生，会复用已有对象，这个区间内的Integer值可以直接使用&#x3D;&#x3D;进行判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断。——阿里巴巴Java开发手册</p>
+</blockquote>
 
         </div>
 
