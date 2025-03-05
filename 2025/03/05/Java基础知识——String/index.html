@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoshifu">
+
+
+
+
+
+<title>Java基础知识——String | laoshifu&#39;s blog</title>
+
+
+
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/katomegumi99/cdn@main/images/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="laoshifu's blog" type="application/atom+xml">
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">laoshifu&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">laoshifu&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Java基础知识——String</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoshifu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 5, 2025&nbsp;&nbsp;22:02:42</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="String、StringBuffer、StringBuilder-的区别？"><a href="#String、StringBuffer、StringBuilder-的区别？" class="headerlink" title="String、StringBuffer、StringBuilder 的区别？"></a>String、StringBuffer、StringBuilder 的区别？</h2><p><strong>可变性</strong></p>
+<p><code>String</code>是不可变的。</p>
+<p><code>StringBuilder</code>和<code>StringBuffer</code>都是继承自<code>AbstractStringBuilder</code> 类，在<code>AbstractStringBuilder</code>中也是使用字符数组保存字符串，不过没有使用<code>final</code>和<code>private</code>关键字修饰，最关键的时这个<code>AbstractStringBuilder</code> 类还提供了很多修改字符串的方法，例如<code>append</code>方法。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractStringBuilder</span> <span class="token keyword">implements</span> <span class="token class-name">Appendable</span><span class="token punctuation">,</span> CharSequence <span class="token punctuation">{</span>
+    <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> value<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> AbstractStringBuilder <span class="token function">append</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>str <span class="token operator">==</span> null<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token function">appendNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">ensureCapacityInternal</span><span class="token punctuation">(</span>count <span class="token operator">+</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        str<span class="token punctuation">.</span><span class="token function">getChars</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">,</span> value<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        count <span class="token operator">+=</span> len<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>线程安全性</strong></p>
+<p><code>String</code> 中的对象是不可变的，也就可以理解为常量，线程安全。<code>AbstractStringBuilder</code> 是 <code>StringBuilder</code> 与 <code>StringBuffer</code> 的公共父类，定义了一些字符串的基本操作，如 <code>expandCapacity</code>、<code>append</code>、<code>insert</code>、<code>indexOf</code> 等公共方法。<code>StringBuffer</code> 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。<code>StringBuilder</code> 并没有对方法进行加同步锁，所以是非线程安全的。</p>
+<p><strong>性能</strong></p>
+<p>每次对 <code>String</code> 类型进行改变的时候，都会生成一个新的 <code>String</code> 对象，然后将指针指向新的 <code>String</code> 对象。<code>StringBuffer</code> 每次都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 <code>StringBuilder</code> 相比使用 <code>StringBuffer</code> 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</p>
+<p><strong>总结</strong></p>
+<p>（1）操作少量数据使用<code>String</code></p>
+<p>（2）单线程操作字符串缓冲区下操作大量数据使用<code>StringBuilder</code></p>
+<p>（3）多线程操作字符串缓冲区下操作大量数据使用<code>StringBuffer</code></p>
+<h2 id="String为什么是不可变的？"><a href="#String为什么是不可变的？" class="headerlink" title="String为什么是不可变的？"></a>String为什么是不可变的？</h2><p><code>String</code> 类中使用 <code>final</code> 关键字修饰字符数组来保存字符串。当被final关键字修饰时，该类不能被继承，修饰的方法不能被重写，修饰的变量是基本数据类型则值不能被改变，修饰的变量是引用类型则不能再指向其他对象。</p>
+<p>所以<code>String</code>不可变的原因是：因为保存字符串的数组被<code>final</code>修饰且为私有的，并且<code>String</code>类没有提供修改这个字符串的方法。再者就是<code>String</code>类被<code>final</code>修饰导致其不能被继承，进而避免了子类破坏<code>String</code>不可变的规则。</p>
+<h2 id="字符串拼接方法中“-”和StringBuilder的区别是什么？"><a href="#字符串拼接方法中“-”和StringBuilder的区别是什么？" class="headerlink" title="字符串拼接方法中“+”和StringBuilder的区别是什么？"></a>字符串拼接方法中“+”和StringBuilder的区别是什么？</h2><p><code>Java</code> 语言本身并不支持运算符重载，“+”和“+&#x3D;”是专门为<code>String</code>类重载过的运算符，也是 <code>Java </code>中仅有的两个重载过的运算符。</p>
+<p>字符串对象通过“+”的字符串拼接方式，实际上是通过<code>StringBuilder</code>调用<code>append()</code>方法实现的，在拼接完成之后调用<code>toString()</code>方法得到一个<code>String</code>对象。</p>
+<p>但是在循环中使用“+”进行字符串拼接时，编译器不会创建单个<code>StringBuilder</code>复用，而是每循环一次就创建一个新的<code>StringBuilder</code>对象。</p>
+<p>当使用<code>StringBuilder</code>对象进行字符串拼接时，就不会存在这个问题。</p>
+<h2 id="String中equals-和Object中equals-的区别是什么？"><a href="#String中equals-和Object中equals-的区别是什么？" class="headerlink" title="String中equals()和Object中equals()的区别是什么？"></a>String中equals()和Object中equals()的区别是什么？</h2><p><code>String</code> 中的 <code>equals</code> 方法是被重写过的，比较的是 String 字符串的值是否相等。 <code>Object</code> 的 <code>equals</code> 方法是比较的对象的内存地址。</p>
+<h2 id="字符串常量池是什么？"><a href="#字符串常量池是什么？" class="headerlink" title="字符串常量池是什么？"></a>字符串常量池是什么？</h2><p><strong>字符串常量池</strong> 是<code>JVM</code> 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。</p>
+<p>当进行<code>String str = new String(&quot;abc&quot;)</code>这就话时，分两种情况：</p>
+<p>（1）当字符串常量池中不存在”abc”时，会创建两个字符串对象。一个在字符串常量池中，由ldc指令触发创建。一个在堆中，由<code>new String()</code>创建，并使用常量池中的”abc”进行初始化。</p>
+<p>（2）字符串常量池中已存在 “abc”：会创建 1 个 字符串对象。该对象在堆中，由 <code>new String()</code> 创建，并使用常量池中的 “abc” 进行初始化。</p>
+<p><code>ldc（load constant）</code>指令的确是从常量池中加载各种类型的常量，包括字符串常量、整数常量、浮点数常量，甚至是类引用等等。对于字符串常量，ldc指令的行为如下：</p>
+<p>（1）从常量池加载字符串：<code>ldc</code>首先检查字符串常量池中是否已经存在内容小童的字符串对象。</p>
+<p>（2）复用已有的字符串对象：如果字符串常量池中已经存在相同内容的字符串对象，<code>ldc</code>会将该对象的引用加载到操作数栈上。</p>
+<p>（3）没有则创建新的对象并加入常量池：如果字符串常量池中没有相同内容的字符串对象，<code>JVM</code> 会在常量池中创建一个新的字符串对象，并将其引用加载到操作数栈中。</p>
+<h2 id="String的intern方法有什么作用？"><a href="#String的intern方法有什么作用？" class="headerlink" title="String的intern方法有什么作用？"></a>String的intern方法有什么作用？</h2><p><code>String.intern()</code> 是一个 <code>native</code> (本地) 方法，用来处理字符串常量池的字符串引用。他的工作流程分两种情况：</p>
+<p>（1）<strong>常量池中已有相同内容的字符串对象</strong>：如果字符串常量池中已经有一个与调用 <code>intern()</code> 方法的字符串内容相同的 <code>String</code> 对象，<code>intern()</code> 方法会直接返回常量池中该对象的引用。</p>
+<p>（2）<strong>常量池中没有相同内容的字符串对象</strong>：如果字符串常量池中还没有一个与调用 <code>intern()</code> 方法的字符串内容相同的对象，<code>intern()</code> 方法会将当前字符串对象的引用添加到字符串常量池中，并返回该引用。</p>
+<p>总结：</p>
+<p>1.<code>intern()</code>方法的主要作用是确保字符串引用在常量池中的唯一性。</p>
+<p>2.当调用<code>intern()</code>方法时，如果常量池中已经存在相同内容的字符串，则返回常量池中已有对象的引用；否则，将该字符串添加到常量池并返回其引用。</p>
+<h2 id="String类型的变量和常量做“-”运算时发生了什么？"><a href="#String类型的变量和常量做“-”运算时发生了什么？" class="headerlink" title="String类型的变量和常量做“+”运算时发生了什么？"></a>String类型的变量和常量做“+”运算时发生了什么？</h2><p>对于编译期可以确定值的字符串，也就是常量字符串，JVM会将其存入字符串常量池。并且，字符串常量拼接得到的字符串常量在编译阶段就已经被存入字符串常量池中，这得益于编译器的优化。</p>
+<p>在编译过程中，Javac 编译器（下文中统称为编译器）会进行一个叫做 <strong>常量折叠(Constant Folding)</strong> 的代码优化。</p>
+<p>常量折叠会把常量表达式的值求出来作为常量嵌在最终生成的代码中。</p>
+<p><strong>并不是所有的常量都会进行折叠</strong>，只有编译器在程序编译期就可以确定值的常量才可以：</p>
+<ul>
+<li>基本数据类型( <code>byte</code>、<code>boolean</code>、<code>short</code>、<code>char</code>、<code>int</code>、<code>float</code>、<code>long</code>、<code>double</code>)以及字符串常量。</li>
+<li><code>final</code> 修饰的基本数据类型和字符串变量</li>
+<li>字符串通过 “+”拼接得到的字符串、基本数据类型之间算数运算（加减乘除）、基本数据类型的位运算（&lt;&lt;、&gt;&gt;、&gt;&gt;&gt; ）</li>
+</ul>
+<p><strong>注意：引用的值在程序编译期是无法确定的，编译器无法对其进行优化。</strong></p>
+<p>对象引用和“+”的字符串拼接方式，实际上是通过 <code>StringBuilder</code> 调用 <code>append()</code> 方法实现的，拼接完成之后调用 <code>toString()</code> 得到一个 <code>String</code> 对象 。</p>
+<p>所以我们在平时写代码的时候，尽量避免多个字符串对象拼接，因为这样会重新创建对象。如果需要改变字符串的话，可以使用 <code>StringBuilder</code> 或者 <code>StringBuffer</code>。</p>
+<p>不过，字符串使用 <code>final</code> 关键字声明之后，可以让编译器当做常量来处理。</p>
+<p>被 <code>final</code> 关键字修饰之后的 <code>String</code> 会被编译器当做常量来处理，编译器在程序编译期就可以确定它的值，其效果就相当于访问常量。</p>
+<p><strong>为什么会这样？</strong></p>
+<p>因为代码优化几乎都是在即时编译器中进行。如果编译器在运行时才能知道其确切值的话，就无法对其优化。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoshifu</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Java/"># Java</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/03/04/%E5%8C%85%E8%A3%85%E7%B1%BB%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/">包装类的缓存机制</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoshifu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
